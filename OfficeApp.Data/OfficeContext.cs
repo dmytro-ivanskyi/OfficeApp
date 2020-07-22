@@ -20,12 +20,12 @@ namespace OfficeApp.Data
         {
             modelBuilder.Entity<UserPermission>().HasKey(userPerm =>
             new { userPerm.UserId, userPerm.PermissionId });
-            modelBuilder.Entity<User>().ToTable("Users")
+            modelBuilder.Entity<User>()
                 .Property(u => u.UserId)
                 .HasColumnName("Id");
-            modelBuilder.Entity<Task>().ToTable("Tasks");
-            modelBuilder.Entity<Office>().ToTable("Offices");
-            modelBuilder.Entity<Permission>().ToTable("Permissions")
+            modelBuilder.Entity<Task>();
+            modelBuilder.Entity<Office>();
+            modelBuilder.Entity<Permission>()
                 .Property(p => p.PermissionId)
                 .HasColumnName("Id");
         }
